@@ -1,0 +1,36 @@
+class Glass
+
+types
+  public MaterialType = <Caliente> | <Tibio> | <Frio>;
+
+instance variables
+private id: token;
+private material: MaterialType;
+private volume: real;
+
+operations
+
+public getId:() ==> token
+getId() == (
+  return id;
+);
+
+public getMaterial:() ==> MaterialType
+getMaterial() == (
+  return material;
+);
+public getVolume:() ==> real
+getVolume() == (
+  return volume;
+);
+
+public Glass: token * MaterialType * real ==> Glass
+Glass(i, m, v) == (
+  id := i;
+  material := m;
+  volume := v;
+);
+
+functions
+-- no functions currently defined
+end Glass

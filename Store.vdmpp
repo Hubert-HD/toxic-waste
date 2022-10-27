@@ -1,0 +1,20 @@
+class Store
+
+instance variables
+private warehouse: set of Rack;
+
+operations
+public getWarehouse:() ==> set of Rack
+getWarehouse() == (
+  return warehouse;
+);
+
+public Store: set of Rack ==> Store
+Store(w) == (
+  warehouse := w;
+)
+pre forall rack_1, rack_2 in set w & rack_1 <> rack_2 => rack_1.getId() <> rack_2.getId();
+
+functions
+-- no functions currently defined
+end Store

@@ -1,0 +1,33 @@
+--------------------------------------------------------
+// success
+
+create rack_1 := new Rack (mk_token([1,1]), {
+  new Glass (mk_token(1), <Caliente>, 12.5),
+  new Glass (mk_token(2), <Frio>, 15.75),
+  new Glass (mk_token(3), <Frio>, 20.8)
+}, 100)
+
+create rack_2 := new Rack (mk_token([1,2]), {
+  new Glass (mk_token(4), <Tibio>, 10.4),
+  new Glass (mk_token(5), <Caliente>, 20)
+}, 10)
+
+create store := new Store ({rack_1, rack_2})
+print (store.getWarehouse())
+
+--------------------------------------------------------
+// error
+
+create rack_1 := new Rack (mk_token([1,1]), {
+  new Glass (mk_token(1), <Caliente>, 12.5),
+  new Glass (mk_token(2), <Frio>, 15.75),
+  new Glass (mk_token(3), <Frio>, 20.8)
+}, 100)
+
+create rack_2 := new Rack (mk_token([1,2]), {
+  new Glass (mk_token(4), <Tibio>, 10.4),
+  new Glass (mk_token(5), <Caliente>, 20)
+}, 1)
+
+create store := new Store ({rack_1, rack_2})
+print (store.getWarehouse())

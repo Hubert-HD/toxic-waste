@@ -1,0 +1,34 @@
+class Rack
+
+instance variables
+private id: token;
+private content: map token to Glass;
+private size: nat;
+
+operations
+
+public getId:() ==> token
+getId() == (
+  return id;
+);
+
+public getContent:() ==> map token to Glass
+getContent() == (
+  return content;
+);
+public getSize:() ==> real
+getSize() == (
+  return size;
+);
+
+public Rack: token * set of Glass * real ==> Rack
+Rack(i, c, s) == (
+  id := i;
+  content := {glass.getId() |-> glass | glass in set c};
+  size := s;
+)
+pre card c <= s and forall glass_1, glass_2 in set c & glass_1 <> glass_2 => glass_1.getId() <> glass_2.getId();
+
+functions
+-- no functions currently defined
+end Rack
